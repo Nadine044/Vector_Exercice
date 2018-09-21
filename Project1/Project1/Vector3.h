@@ -97,6 +97,8 @@ public:
 		
 		return *this;
 	}
+	
+	//HACER -> vec3.distance.squared()
 
 
 };
