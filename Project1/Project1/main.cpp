@@ -14,6 +14,7 @@ int main() {
 	vec3 Vector7;
 	vec3 Vector8(8, 8, 8);
 	vec3 Vector9(10, 5, 2);
+	vec3 Vector10(1, 1, 1);
 
 	cout << Vector1.getX() << ", " << Vector1.getY() << ", " << Vector1.getZ() << endl;
 	cout << Vector2.getX() << ", " << Vector2.getY() << ", " << Vector2.getZ() << endl;
@@ -38,11 +39,13 @@ int main() {
 
 	Vector8.zero();
 
-	cout << Vector8.getX() << ", " << Vector8.getY() << ", " << Vector8.getZ() << endl;
+	Vector10.normalize();
 
-	Vector9.distance(Vector3, Vector4);
+	cout << "Normalize: " << Vector10.getX() << ", " << Vector10.getY() << ", " << Vector10.getZ() << endl;
 
-	cout << Vector9.distance() << endl;
+	cout << "Zero: " << Vector8.getX() << ", " << Vector8.getY() << ", " << Vector8.getZ() << endl;
+	
+	cout << "Distance: " << Vector9.distance(Vector3, Vector4) << endl;
 
 	system("pause");
 	return 0;

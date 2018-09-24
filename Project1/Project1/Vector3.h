@@ -10,7 +10,7 @@ public:
 	//CONSTRUCTORS
 
 	vec3() : x(0), y(0), z(0) {}
-	vec3(float x, float y, float z) : x(x), y(y), z(z) {}
+	vec3(const float x, const float y, const float z) : x(x), y(y), z(z) {}
 	//~Vector();
 
 	float getX() const { return x; }
@@ -80,7 +80,15 @@ public:
 	
 	//METHODS
 
-	vec3 normalize() {
+	void normalize() {
+		
+		float modulo;
+
+		modulo = sqrt(x*x + y*y + z*z);
+
+		x = x / modulo;
+		y = y / modulo;
+		z = z / modulo;
 
 	}
 
@@ -91,11 +99,10 @@ public:
 		return *this;
 	}
 	
-	vec3 distance(vec3 vector1, vec3 vector2) {
-
-		sqrt((vector2.x - vector1.x)*(vector2.x - vector1.x) + (vector2.y - vector1.y)*(vector2.y - vector1.y) + (vector2.z - vector1.z)*(vector2.z - vector1.z));
+	float distance(vec3 vector1, vec3 vector2) {
+				
+		return sqrt((vector2.x - vector1.x)*(vector2.x - vector1.x) + (vector2.y - vector1.y)*(vector2.y - vector1.y) + (vector2.z - vector1.z)*(vector2.z - vector1.z));
 		
-		return *this;
 	}
 	
 	//HACER -> vec3.distance.squared()
